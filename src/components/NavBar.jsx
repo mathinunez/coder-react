@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
-
+import logo from "../assets/logo.jpg";
 
 const NavBar = () => {
     return(
@@ -10,7 +10,7 @@ const NavBar = () => {
                         <div className="col-6">
                             <nav className="navbar navbar-expand-lg bg-body-tertiary ">
                                 <div className="container-fluid">
-                                    <Link className="navbar-brand" to={"/"}><img src="///src/assets/logo.jpg"  alt="Logo" width={100} /></Link>
+                                    <Link className="navbar-brand" to={"/"}><img src={logo} alt="Logo" width={100} /></Link>
                                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                     </button>

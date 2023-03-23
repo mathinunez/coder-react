@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link, NavLink } from "react-router-dom";
+
 
 const ItemDetail = ({item}) => {
     return (
@@ -10,6 +12,8 @@ const ItemDetail = ({item}) => {
                     <h1>{item.nombre}</h1>
                     <p>{item.descripcion}</p>
                     <p>${item.precio} </p>
+                    <button type="button" class="btn btn-warning">Agregar a carrito</button>
+                    <Link className="navbar-brand" to={"/"}><button type="button" class="btn btn-warning px-2">Volver al Inicio</button></Link>
                     
                 </div>
                 
