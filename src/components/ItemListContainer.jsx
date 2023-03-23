@@ -14,7 +14,7 @@ const ItemListContainer = () => {
         const  promesa = new Promise((resolve) => {
              setTimeout(() => {
                 resolve(id ? arrayProductos.filter(item => item.categoria === id) : arrayProductos)
-            },)
+            }, )
         });
 
         promesa.then((data) => {

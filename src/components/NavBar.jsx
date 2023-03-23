@@ -1,41 +1,44 @@
-import React from 'react';
-import CartWidget from './CartWidget';
-import './styles/NavBar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
+
 
 const NavBar = () => {
-    return (
-        <header className='header'>
-
-            <div className="header-container">
-
-                <div className="menu-button">
-                    <a href="/"><FontAwesomeIcon icon={faBars} size="lg" color="white" /></a>
-                    <span className='menu'>Menu</span>
-                </div>
-
-                <nav>
-                    <ul className="nav-container">
-                         <li className="products-item">
-                            <a href="/" className="lista">Inicio</a>
-                        </li>
-                        <li className="products-item">
-                            <a href="/" className="lista"> Productos </a>
-                        </li>
-                         <li className="products-item">
-                            <a href="/" className="lista">Blog</a>
-                        </li>
-                         <li className="products-item">
-                            <a href="/" className="lista">Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-                <CartWidget />
+    return(
+        <div className="container" id="navbar">
+            <div className="row">
+                        <div className="col-6">
+                            <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+                                <div className="container-fluid">
+                                    <Link className="navbar-brand" to={"/"}><img src="///src/assets/logo.jpg"  alt="Logo" width={100} /></Link>
+                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div className="collapse navbar-collapse" id="navbarNav">
+                                    <ul className="navbar-nav">
+                                        <button type="button" class="btn btn-warning  mx-2">
+                                        <NavLink className="nav-link" aria-current="page" to={"/category/aros"} >Aros</NavLink>
+                                        </button>
+                                        <button type="button" class="btn btn-warning  mx-2">
+                                        <NavLink className="nav-link" to={"/category/pulseras"}>Pulseras</NavLink>
+                                        </button>
+                                        <button type="button" class="btn btn-warning mx-2">
+                                        <NavLink className="nav-link" to={"/category/anillos"}>Anillos</NavLink>
+                                        </button>
+                                        
+                                    </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div className="col-6 d-flex justify-content-end  align-items-center">
+                            <CartWidget/>
+                        </div>        
             </div>
-        </header>
+        </div>
+        
+            
     )
 }
-
 
 export default NavBar;
